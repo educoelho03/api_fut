@@ -17,11 +17,10 @@ import java.util.List;
 public class ClassificacaoController {
 
     private final ClassificacaoServiceImpl classificacaoServiceImpl;
-    private final ClassificacaoEntityMapper classificacaoEntityMapper;
+    private ClassificacaoEntityMapper classificacaoEntityMapper;
 
-    public ClassificacaoController(ClassificacaoServiceImpl classificacaoServiceImpl, ClassificacaoEntityMapper classificacaoEntityMapper) {
+    public ClassificacaoController(ClassificacaoServiceImpl classificacaoServiceImpl) {
         this.classificacaoServiceImpl = classificacaoServiceImpl;
-        this.classificacaoEntityMapper = classificacaoEntityMapper;
     }
 
 
