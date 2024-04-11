@@ -13,22 +13,36 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/classificacao")
+@RequestMapping
 public class ClassificacaoController {
 
     private final ClassificacaoServiceImpl classificacaoServiceImpl;
-    private ClassificacaoEntityMapper classificacaoEntityMapper;
+    private final ClassificacaoEntityMapper classificacaoEntityMapper;
 
-    public ClassificacaoController(ClassificacaoServiceImpl classificacaoServiceImpl) {
+    public ClassificacaoController(ClassificacaoServiceImpl classificacaoServiceImpl, ClassificacaoEntityMapper classificacaoEntityMapper) {
         this.classificacaoServiceImpl = classificacaoServiceImpl;
+        this.classificacaoEntityMapper = classificacaoEntityMapper;
     }
 
 
-    @GetMapping("/brasileirao")
+    @GetMapping("/classificacao/brasileirao")
     public ResponseEntity<List<ClassificacaoDTO>> buscarClassificacao() {
         List<ClassificacaoEntity> classificacaoEntity = classificacaoServiceImpl.exibirClassificacao();
         List<ClassificacaoDTO> classificacaoDTO = classificacaoEntityMapper.convertToDtoList(classificacaoEntity);
         return new ResponseEntity<>(classificacaoDTO, HttpStatus.OK);
     }
 
+    @GetMapping("/classificados/sul-americana")
+    public ResponseEntity<List<ClassificacaoDTO>> classificadosSula(){
+        List<ClassificacaoEntity> classificacaoEntity = classificacaoServiceImpl.listarTimesClassificadosSula();
+        List<ClassificacaoDTO> classificacaoDTO = classificacaoEntityMapper.convertToDtoList(classificacaoEntity);
+        return new ResponseEntity<>(classificacaoDTO, HttpStatus.OK);
+    }
+
+    @GetMapping("/rebaixados")
+    public ResponseEntity<List<ClassificacaoDTO>> clubesRebaixados(){
+        List<ClassificacaoEntity> classificacaoEntity = classificacaoServiceImpl.exibirTimesRebaixados();
+        List<ClassificacaoDTO> classificacaoDTO = classificacaoEntityMapper.convertToDtoList(classificacaoEntity);
+        return new ResponseEntity<>(classificacaoDTO, HttpStatus.OK);
+    }
 }

@@ -17,4 +17,12 @@ public class ClassificacaoServiceImpl extends ClassificacaoService {
     public List<ClassificacaoEntity> exibirClassificacao() {
         return super.listarTimes();
     }
+
+    public List<ClassificacaoEntity> exibirTimesClassificadosSula() {
+        return super.listarTimesClassificadosSula();
+    }
+
+    public List<ClassificacaoEntity> exibirTimesRebaixados() {
+        return super.listarTimesRebaixados();
+    }
 }
