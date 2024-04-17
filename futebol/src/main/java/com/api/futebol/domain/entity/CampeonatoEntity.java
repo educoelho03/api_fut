@@ -4,18 +4,16 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Campeonato")
+@Table(name = "Campeonatos")
 @NoArgsConstructor
 public class CampeonatoEntity {
 
-    // vai ter uma lista de classificações 1 classificacao = 1 linha da tabela
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne
     private ClassificacaoEntity classificacao;
-    private Integer temporada;
 
     public Long getId() {
         return id;
@@ -27,13 +25,5 @@ public class CampeonatoEntity {
 
     public void setClassificacao(ClassificacaoEntity classificacao) {
         this.classificacao = classificacao;
-    }
-
-    public Integer getTemporada() {
-        return temporada;
-    }
-
-    public void setTemporada(Integer temporada) {
-        this.temporada = temporada;
     }
 }

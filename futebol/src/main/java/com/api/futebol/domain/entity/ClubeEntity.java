@@ -1,11 +1,12 @@
 package com.api.futebol.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.api.futebol.domain.enums.Estado;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "Clubes")
+@NoArgsConstructor
 public class ClubeEntity {
 
     @Id
@@ -14,7 +15,9 @@ public class ClubeEntity {
 
     private String nome;
     private String anoFundacao;
-    private String Estadio;
+    private String estadio;
+    private String tecnico;
+    private Estado estado;
 
 
     public String getNome() {
@@ -34,11 +37,26 @@ public class ClubeEntity {
     }
 
     public String getEstadio() {
-        return Estadio;
+        return estadio;
     }
 
     public void setEstadio(String estadio) {
-        Estadio = estadio;
+        this.estadio = estadio;
     }
 
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public String getTecnico() {
+        return tecnico;
+    }
+
+    public void setTecnico(String tecnico) {
+        this.tecnico = tecnico;
+    }
 }

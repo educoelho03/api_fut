@@ -14,7 +14,6 @@ public class CampeonatoEntityMapperImpl implements CampeonatoEntityMapper {
         CampeonatoEntity campeonatoEntity = new CampeonatoEntity();
 
         campeonatoEntity.setClassificacao(campeonatoDTO.classificacao());
-        campeonatoEntity.setTemporada(campeonatoDTO.temporada());
 
         return campeonatoEntity;
     }
@@ -26,8 +25,6 @@ public class CampeonatoEntityMapperImpl implements CampeonatoEntityMapper {
         }
 
         return new CampeonatoDTO(
-                campeonatoEntity.getClassificacao(),
-                campeonatoEntity.getTemporada()
-        );
+                campeonatoEntity.getClassificacao());
     }
 }

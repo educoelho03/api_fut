@@ -13,13 +13,14 @@ public record ClassificacaoDTO(
         Integer derrotas,
         Integer golsMarcados,
         Integer golsSofridos,
+        Integer temporada,
 
         @Formula("golsMarcados - gols")
         Integer saldoDeGols
 ) {
 
     public ClassificacaoDTO(Integer posicao, ClubeEntity clubeEntity, Integer pontos, Integer partidasJogadas, Integer vitorias,
-                            Integer empates, Integer derrotas, Integer golsMarcados, Integer golsSofridos, Integer saldoDeGols) {
+                            Integer empates, Integer derrotas, Integer golsMarcados, Integer golsSofridos, Integer temporada, Integer saldoDeGols) {
         this.posicao = posicao;
         this.clubeEntity = clubeEntity;
         this.pontos = pontos;
@@ -29,6 +30,7 @@ public record ClassificacaoDTO(
         this.derrotas = derrotas;
         this.golsMarcados = golsMarcados;
         this.golsSofridos = golsSofridos;
+        this.temporada = temporada;
         this.saldoDeGols = saldoDeGols;
     }
 }

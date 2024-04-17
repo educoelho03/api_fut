@@ -25,6 +25,7 @@ public class ClassificacaoEntityMapperImpl implements ClassificacaoEntityMapper 
         classificacaoEntity.setDerrotas(classificacaoDTO.derrotas());
         classificacaoEntity.setGolsMarcados(classificacaoDTO.golsMarcados());
         classificacaoEntity.setGolsSofridos(classificacaoDTO.golsSofridos());
+        classificacaoEntity.setTemporada(classificacaoDTO.temporada());
         classificacaoEntity.setSaldoDeGols(classificacaoDTO.saldoDeGols());
 
         return classificacaoEntity;
@@ -46,6 +47,7 @@ public class ClassificacaoEntityMapperImpl implements ClassificacaoEntityMapper 
                 classificacaoEntity.getDerrotas(),
                 classificacaoEntity.getGolsMarcados(),
                 classificacaoEntity.getGolsSofridos(),
+                classificacaoEntity.getTemporada(),
                 classificacaoEntity.getSaldoDeGols()
         );
     }

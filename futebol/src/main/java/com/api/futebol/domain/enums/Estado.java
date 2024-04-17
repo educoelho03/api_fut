@@ -1,6 +1,6 @@
 package com.api.futebol.domain.enums;
 
-public enum States {
+public enum Estado {
     ACRE("Acre", "AC"),
     ALAGOAS("Alagoas", "AL"),
     AMAPA("Amapá", "AP"),
@@ -32,7 +32,7 @@ public enum States {
     private final String nome;
     private final String sigla;
 
-    States(String nome, String sigla) {
+    Estado(String nome, String sigla) {
         this.nome = nome;
         this.sigla = sigla;
     }

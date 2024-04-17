@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Formula;
 
 @Entity
-@Table(name = "Classificacao")
+@Table(name = "Classificacoes")
 @NoArgsConstructor
 public class ClassificacaoEntity {
     @Id
@@ -18,7 +18,7 @@ public class ClassificacaoEntity {
     private Integer posicao;
 
     @OneToMany
-    private ClubeEntity clubeEntity;
+    private ClubeEntity clube;
     private Integer ponto;
     private Integer partidaJogada;
     private Integer vitoria;
@@ -26,6 +26,7 @@ public class ClassificacaoEntity {
     private Integer derrota;
     private Integer golMarcado;
     private Integer golSofrido;
+    private Integer temporada;
 
     @Formula("golsMarcados - golsSofridos")
     private Integer saldoDeGol;
@@ -43,11 +44,11 @@ public class ClassificacaoEntity {
     }
 
     public ClubeEntity getClubeEntity() {
-        return clubeEntity;
+        return clube;
     }
 
     public void setClubeEntity(ClubeEntity clubeEntity) {
-        this.clubeEntity = clubeEntity;
+        this.clube = clubeEntity;
     }
 
     public Integer getPontos() {
@@ -112,5 +113,13 @@ public class ClassificacaoEntity {
 
     public void setSaldoDeGols(Integer saldoDeGols) {
         this.saldoDeGol = saldoDeGols;
+    }
+
+    public Integer getTemporada() {
+        return temporada;
+    }
+
+    public void setTemporada(Integer temporada) {
+        this.temporada = temporada;
     }
 }
