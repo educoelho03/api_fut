@@ -17,7 +17,7 @@ public class ClassificacaoEntityMapperImpl implements ClassificacaoEntityMapper 
         ClassificacaoEntity classificacaoEntity = new ClassificacaoEntity();
 
         classificacaoEntity.setPosicao(classificacaoDTO.posicao());
-        classificacaoEntity.setClube(classificacaoDTO.clube());
+        classificacaoEntity.setClubeEntity(classificacaoDTO.clubeEntity());
         classificacaoEntity.setPontos(classificacaoDTO.pontos());
         classificacaoEntity.setPartidasJogadas(classificacaoDTO.partidasJogadas());
         classificacaoEntity.setVitorias(classificacaoDTO.vitorias());
@@ -38,7 +38,7 @@ public class ClassificacaoEntityMapperImpl implements ClassificacaoEntityMapper 
 
         return new ClassificacaoDTO(
                 classificacaoEntity.getPosicao(),
-                classificacaoEntity.getClube(),
+                classificacaoEntity.getClubeEntity(),
                 classificacaoEntity.getPontos(),
                 classificacaoEntity.getPartidasJogadas(),
                 classificacaoEntity.getVitorias(),

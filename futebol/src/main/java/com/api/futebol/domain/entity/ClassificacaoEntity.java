@@ -17,7 +17,8 @@ public class ClassificacaoEntity {
     private Long id;
     private Integer posicao;
 
-    private String clube;
+    @OneToMany
+    private ClubeEntity clubeEntity;
     private Integer ponto;
     private Integer partidaJogada;
     private Integer vitoria;
@@ -41,12 +42,12 @@ public class ClassificacaoEntity {
         this.posicao = posicao;
     }
 
-    public String getClube() {
-        return clube;
+    public ClubeEntity getClubeEntity() {
+        return clubeEntity;
     }
 
-    public void setClube(String clube) {
-        this.clube = clube;
+    public void setClubeEntity(ClubeEntity clubeEntity) {
+        this.clubeEntity = clubeEntity;
     }
 
     public Integer getPontos() {
