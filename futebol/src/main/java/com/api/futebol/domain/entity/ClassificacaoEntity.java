@@ -17,7 +17,7 @@ public class ClassificacaoEntity {
     private Long id;
     private Integer posicao;
 
-    @OneToMany
+    @ManyToOne
     private ClubeEntity clube;
     private Integer ponto;
     private Integer partidaJogada;
