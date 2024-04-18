@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Campeonatos")
+@Table(name = "campeonato")
 @NoArgsConstructor
 public class CampeonatoEntity {
 
@@ -13,17 +13,17 @@ public class CampeonatoEntity {
     private Long id;
 
     @OneToOne
-    private ClassificacaoEntity classificacao;
+    private TabelaEntity tabela;
 
     public Long getId() {
         return id;
     }
 
-    public ClassificacaoEntity getClassificacao() {
-        return classificacao;
+    public TabelaEntity getTabela() {
+        return tabela;
     }
 
-    public void setClassificacao(ClassificacaoEntity classificacao) {
-        this.classificacao = classificacao;
+    public void setTabela(TabelaEntity tabela) {
+        this.tabela = tabela;
     }
 }

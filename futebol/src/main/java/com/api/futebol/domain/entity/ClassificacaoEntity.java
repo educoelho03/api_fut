@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Formula;
 
 @Entity
-@Table(name = "Classificacoes")
+@Table(name = "classificacao")
 @NoArgsConstructor
 public class ClassificacaoEntity {
     @Id
