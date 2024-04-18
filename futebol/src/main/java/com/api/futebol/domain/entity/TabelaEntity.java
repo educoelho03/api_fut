@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "tabela")
+@Table(name = "tabelas")
 @NoArgsConstructor
 public class TabelaEntity {
 
