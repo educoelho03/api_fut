@@ -1,6 +1,6 @@
 package com.api.futebol.controller;
 
-import com.api.futebol.domain.dto.ClassificacaoDTO;
+import com.api.futebol.dto.ClassificacaoDTO;
 import com.api.futebol.domain.entity.ClassificacaoEntity;
 import com.api.futebol.domain.mapper.ClassificacaoEntityMapper;
 import com.api.futebol.serviceImpl.ClassificacaoServiceImpl;
@@ -23,6 +23,7 @@ public class ClassificacaoController {
         this.classificacaoServiceImpl = classificacaoServiceImpl;
     }
 
+    //APLICAR BOAS PRATICAS REST (MAPPER e ACTION)
 
     @GetMapping("/classificacao/brasileirao")
     public ResponseEntity<List<ClassificacaoDTO>> buscarClassificacao() {
