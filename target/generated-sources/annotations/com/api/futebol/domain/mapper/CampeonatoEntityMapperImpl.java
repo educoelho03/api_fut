@@ -1,13 +1,13 @@
 package com.api.futebol.domain.mapper;
 
-import com.api.futebol.domain.dto.CampeonatoDTO;
 import com.api.futebol.domain.entity.CampeonatoEntity;
-import com.api.futebol.domain.entity.ClassificacaoEntity;
+import com.api.futebol.domain.entity.TabelaEntity;
+import com.api.futebol.dto.CampeonatoDTO;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-10T15:08:35-0300",
+    date = "2024-04-19T10:26:50-0300",
     comments = "version: 1.6.0.Beta1, compiler: javac, environment: Java 20.0.1 (Oracle Corporation)"
 )
 public class CampeonatoEntityMapperImpl implements CampeonatoEntityMapper {
@@ -20,7 +20,12 @@ public class CampeonatoEntityMapperImpl implements CampeonatoEntityMapper {
 
         CampeonatoEntity campeonatoEntity = new CampeonatoEntity();
 
-        campeonatoEntity.setClassificacao( tableDTO.classificacao() );
+        campeonatoEntity.setTabela( tableDTO.tabela() );
+        campeonatoEntity.setNome( tableDTO.nome() );
+        campeonatoEntity.setTemporada( tableDTO.temporada() );
+        if ( tableDTO.quantidadeClubes() != null ) {
+            campeonatoEntity.setQuantidadeClubes( tableDTO.quantidadeClubes() );
+        }
 
         return campeonatoEntity;
     }
@@ -31,11 +36,17 @@ public class CampeonatoEntityMapperImpl implements CampeonatoEntityMapper {
             return null;
         }
 
-        ClassificacaoEntity classificacao = null;
+        TabelaEntity tabela = null;
+        String nome = null;
+        String temporada = null;
+        Integer quantidadeClubes = null;
 
-        classificacao = tableEntity.getClassificacao();
+        tabela = tableEntity.getTabela();
+        nome = tableEntity.getNome();
+        temporada = tableEntity.getTemporada();
+        quantidadeClubes = tableEntity.getQuantidadeClubes();
 
-        CampeonatoDTO campeonatoDTO = new CampeonatoDTO( classificacao );
+        CampeonatoDTO campeonatoDTO = new CampeonatoDTO( tabela, nome, temporada, quantidadeClubes );
 
         return campeonatoDTO;
     }

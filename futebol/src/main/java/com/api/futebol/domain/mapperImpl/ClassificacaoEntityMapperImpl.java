@@ -1,6 +1,6 @@
 package com.api.futebol.domain.mapperImpl;
 
-import com.api.futebol.domain.dto.ClassificacaoDTO;
+import com.api.futebol.dto.ClassificacaoDTO;
 import com.api.futebol.domain.entity.ClassificacaoEntity;
 import com.api.futebol.domain.mapper.ClassificacaoEntityMapper;
 
@@ -17,7 +17,7 @@ public class ClassificacaoEntityMapperImpl implements ClassificacaoEntityMapper 
         ClassificacaoEntity classificacaoEntity = new ClassificacaoEntity();
 
         classificacaoEntity.setPosicao(classificacaoDTO.posicao());
-        classificacaoEntity.setClubeEntity(classificacaoDTO.clubeEntity());
+        classificacaoEntity.setClubeEntity(classificacaoDTO.clube());
         classificacaoEntity.setPontos(classificacaoDTO.pontos());
         classificacaoEntity.setPartidasJogadas(classificacaoDTO.partidasJogadas());
         classificacaoEntity.setVitorias(classificacaoDTO.vitorias());
@@ -25,9 +25,6 @@ public class ClassificacaoEntityMapperImpl implements ClassificacaoEntityMapper 
         classificacaoEntity.setDerrotas(classificacaoDTO.derrotas());
         classificacaoEntity.setGolsMarcados(classificacaoDTO.golsMarcados());
         classificacaoEntity.setGolsSofridos(classificacaoDTO.golsSofridos());
-        classificacaoEntity.setTemporada(classificacaoDTO.temporada());
-        classificacaoEntity.setSaldoDeGols(classificacaoDTO.saldoDeGols());
-
         return classificacaoEntity;
     }
 
@@ -46,9 +43,7 @@ public class ClassificacaoEntityMapperImpl implements ClassificacaoEntityMapper 
                 classificacaoEntity.getEmpates(),
                 classificacaoEntity.getDerrotas(),
                 classificacaoEntity.getGolsMarcados(),
-                classificacaoEntity.getGolsSofridos(),
-                classificacaoEntity.getTemporada(),
-                classificacaoEntity.getSaldoDeGols()
+                classificacaoEntity.getGolsSofridos()
         );
     }
 

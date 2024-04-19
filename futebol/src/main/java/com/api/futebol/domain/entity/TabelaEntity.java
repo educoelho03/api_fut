@@ -15,13 +15,13 @@ public class TabelaEntity {
     private Long id;
 
     @OneToMany
-    private List<ClassificacaoEntity> classificacao;
+    private List<ClassificacaoEntity> classificacoes;
 
     public List<ClassificacaoEntity> getClassificacao() {
-        return classificacao;
+        return classificacoes;
     }
 
     public void setClassificacao(List<ClassificacaoEntity> classificacao) {
-        this.classificacao = classificacao;
+        this.classificacoes = classificacao;
     }
 }

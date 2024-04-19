@@ -17,6 +17,7 @@ public class ClubeEntity {
     private String anoFundacao;
     private String estadio;
     private String tecnico;
+    @Enumerated(EnumType.STRING)
     private Estado estado;
 
 

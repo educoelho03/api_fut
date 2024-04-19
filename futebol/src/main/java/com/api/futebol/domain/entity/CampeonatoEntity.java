@@ -14,6 +14,9 @@ public class CampeonatoEntity {
 
     @OneToOne
     private TabelaEntity tabela;
+    private String nome;
+    private String temporada;
+    private Integer quantidadeClubes;
 
     public Long getId() {
         return id;
@@ -25,5 +28,29 @@ public class CampeonatoEntity {
 
     public void setTabela(TabelaEntity tabela) {
         this.tabela = tabela;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTemporada() {
+        return temporada;
+    }
+
+    public void setTemporada(String temporada) {
+        this.temporada = temporada;
+    }
+
+    public int getQuantidadeClubes() {
+        return quantidadeClubes;
+    }
+
+    public void setQuantidadeClubes(int quantidadeClubes) {
+        this.quantidadeClubes = quantidadeClubes;
     }
 }

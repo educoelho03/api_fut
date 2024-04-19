@@ -1,28 +1,24 @@
-package com.api.futebol.domain.dto;
+package com.api.futebol.dto;
 
 import com.api.futebol.domain.entity.ClubeEntity;
 import org.hibernate.annotations.Formula;
 
 public record ClassificacaoDTO(
         Integer posicao,
-        ClubeEntity clubeEntity,
+        ClubeEntity clube,
         Integer pontos,
         Integer partidasJogadas,
         Integer vitorias,
         Integer empates,
         Integer derrotas,
         Integer golsMarcados,
-        Integer golsSofridos,
-        Integer temporada,
-
-        @Formula("golsMarcados - gols")
-        Integer saldoDeGols
+        Integer golsSofridos
 ) {
 
-    public ClassificacaoDTO(Integer posicao, ClubeEntity clubeEntity, Integer pontos, Integer partidasJogadas, Integer vitorias,
-                            Integer empates, Integer derrotas, Integer golsMarcados, Integer golsSofridos, Integer temporada, Integer saldoDeGols) {
+    public ClassificacaoDTO(Integer posicao, ClubeEntity clube, Integer pontos, Integer partidasJogadas, Integer vitorias,
+                            Integer empates, Integer derrotas, Integer golsMarcados, Integer golsSofridos) {
         this.posicao = posicao;
-        this.clubeEntity = clubeEntity;
+        this.clube = clube;
         this.pontos = pontos;
         this.partidasJogadas = partidasJogadas;
         this.vitorias = vitorias;
@@ -30,7 +26,5 @@ public record ClassificacaoDTO(
         this.derrotas = derrotas;
         this.golsMarcados = golsMarcados;
         this.golsSofridos = golsSofridos;
-        this.temporada = temporada;
-        this.saldoDeGols = saldoDeGols;
     }
 }

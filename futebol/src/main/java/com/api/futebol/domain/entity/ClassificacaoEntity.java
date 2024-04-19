@@ -12,21 +12,18 @@ import org.hibernate.annotations.Formula;
 public class ClassificacaoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Max(20)
-    @Min(1)
     private Long id;
     private Integer posicao;
 
     @ManyToOne
     private ClubeEntity clube;
-    private Integer ponto;
-    private Integer partidaJogada;
-    private Integer vitoria;
-    private Integer empate;
-    private Integer derrota;
-    private Integer golMarcado;
-    private Integer golSofrido;
-    private Integer temporada;
+    private Integer pontos;
+    private Integer partidasJogadas;
+    private Integer vitorias;
+    private Integer empates;
+    private Integer derrotas;
+    private Integer golsMarcados;
+    private Integer golsSofridos;
 
     @Formula("golsMarcados - golsSofridos")
     private Integer saldoDeGol;
@@ -52,74 +49,58 @@ public class ClassificacaoEntity {
     }
 
     public Integer getPontos() {
-        return ponto;
+        return pontos;
     }
 
     public void setPontos(Integer pontos) {
-        this.ponto = pontos;
+        this.pontos = pontos;
     }
 
     public Integer getPartidasJogadas() {
-        return partidaJogada;
+        return partidasJogadas;
     }
 
     public void setPartidasJogadas(Integer partidasJogadas) {
-        this.partidaJogada = partidasJogadas;
+        this.partidasJogadas = partidasJogadas;
     }
 
     public Integer getVitorias() {
-        return vitoria;
+        return vitorias;
     }
 
     public void setVitorias(Integer vitorias) {
-        this.vitoria = vitorias;
+        this.vitorias = vitorias;
     }
 
     public Integer getEmpates() {
-        return empate;
+        return empates;
     }
 
     public void setEmpates(Integer empates) {
-        this.empate = empates;
+        this.empates = empates;
     }
 
     public Integer getDerrotas() {
-        return derrota;
+        return derrotas;
     }
 
     public void setDerrotas(Integer derrotas) {
-        this.derrota = derrotas;
+        this.derrotas = derrotas;
     }
 
     public Integer getGolsMarcados() {
-        return golMarcado;
+        return golsMarcados;
     }
 
     public void setGolsMarcados(Integer golsMarcados) {
-        this.golMarcado = golsMarcados;
+        this.golsMarcados = golsMarcados;
     }
 
     public Integer getGolsSofridos() {
-        return golSofrido;
+        return golsSofridos;
     }
 
     public void setGolsSofridos(Integer golsSofridos) {
-        this.golSofrido = golsSofridos;
-    }
-
-    public Integer getSaldoDeGols() {
-        return saldoDeGol;
-    }
-
-    public void setSaldoDeGols(Integer saldoDeGols) {
-        this.saldoDeGol = saldoDeGols;
-    }
-
-    public Integer getTemporada() {
-        return temporada;
-    }
-
-    public void setTemporada(Integer temporada) {
-        this.temporada = temporada;
+        this.golsSofridos = golsSofridos;
     }
 }
