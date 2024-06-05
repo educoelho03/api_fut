@@ -1,13 +1,17 @@
-package com.api.futebol.domain.entity;
+package com.api.futebol.domains.domain;
 
-import com.api.futebol.domain.enums.Estado;
+import com.api.futebol.domains.enums.Estado;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "clubes")
 @NoArgsConstructor
-public class ClubeEntity {
+@AllArgsConstructor
+@Builder
+public class Clube {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

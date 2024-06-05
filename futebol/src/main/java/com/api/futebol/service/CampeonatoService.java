@@ -1,25 +1,19 @@
 package com.api.futebol.service;
 
-import com.api.futebol.domain.entity.CampeonatoEntity;
+import com.api.futebol.domains.domain.Campeonato;
 import com.api.futebol.repository.CampeonatoRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@RequiredArgsConstructor
 public class CampeonatoService {
 
-    private final CampeonatoRepository campeonatoRepository;
+    private CampeonatoRepository campeonatoRepository;
 
-    public CampeonatoService(CampeonatoRepository campeonatoRepository) {
-        this.campeonatoRepository = campeonatoRepository;
+    public List<Campeonato> findByName(String name){
+        return campeonatoRepository.findByName(name);
     }
-
-    public CampeonatoEntity adicionaCampeonato(String nome, String temporada, Integer quantidadeClubes){
-        CampeonatoEntity campeonato = new CampeonatoEntity();
-        campeonato.setNome(nome);
-        campeonato.setTemporada(temporada);
-        campeonato.setQuantidadeClubes(quantidadeClubes);
-        return campeonatoRepository.save(campeonato);
-    }
-
-
 }

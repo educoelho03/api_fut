@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/futebol.iml" filepath="$PROJECT_DIR$/.idea/futebol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/api_fut.iml" filepath="$PROJECT_DIR$/.idea/api_fut.iml" />
+      <module fileurl="file://$PROJECT_DIR$/futebol/futebol.iml" filepath="$PROJECT_DIR$/futebol/futebol.iml" />
     </modules>
   </component>
 </project>

@@ -1,20 +1,23 @@
-package com.api.futebol.domain.entity;
+package com.api.futebol.domains.domain;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.Builder;
 
 @Entity
-@Table(name = "campeonatos")
+@Data
+@AllArgsConstructor
 @NoArgsConstructor
-public class CampeonatoEntity {
+@Builder
+public class Campeonato {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne
-    private TabelaEntity tabela;
-    private String nome;
+    private Tabela tabela;
+    private String name;
     private String temporada;
     private Integer quantidadeClubes;
 
@@ -22,20 +25,20 @@ public class CampeonatoEntity {
         return id;
     }
 
-    public TabelaEntity getTabela() {
+    public Tabela getTabela() {
         return tabela;
     }
 
-    public void setTabela(TabelaEntity tabela) {
+    public void setTabela(Tabela tabela) {
         this.tabela = tabela;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
     public String getTemporada() {

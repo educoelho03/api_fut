@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mysqldb:
+    image: mysql
+    container_name: mysql
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+    ports:
+      - "3307:3306"
+    volumes:
+      - api_futebol:/var/lib/mysql
+  api_app:
+    depends_on:
+      - mysqldb
+    build:
+      context: ./
+      # dockerfile: Dockerfile
+    working_dir: /usr/acc/api_futebol_app
+    container_name: api_futebol_app
+    restart: on-failure
+    env_file:
+      - ./.env
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:$MYSQLDB_DATABASE?useSSL=false&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=$MYSQLDB_USER
+      - SPRING_DATASOURCE_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+
+volumes:
+  api_futebol:

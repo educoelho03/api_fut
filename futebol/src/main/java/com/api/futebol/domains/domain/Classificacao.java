@@ -1,22 +1,20 @@
-package com.api.futebol.domain.entity;
+package com.api.futebol.domains.domain;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Formula;
 
 @Entity
 @Table(name = "classificacoes")
 @NoArgsConstructor
-public class ClassificacaoEntity {
+public class Classificacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Integer posicao;
 
     @ManyToOne
-    private ClubeEntity clube;
+    private Clube clube;
     private Integer pontos;
     private Integer partidasJogadas;
     private Integer vitorias;
@@ -40,12 +38,12 @@ public class ClassificacaoEntity {
         this.posicao = posicao;
     }
 
-    public ClubeEntity getClubeEntity() {
+    public Clube getClubeEntity() {
         return clube;
     }
 
-    public void setClubeEntity(ClubeEntity clubeEntity) {
-        this.clube = clubeEntity;
+    public void setClubeEntity(Clube clube) {
+        this.clube = clube;
     }
 
     public Integer getPontos() {

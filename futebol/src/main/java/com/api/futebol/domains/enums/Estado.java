@@ -1,4 +1,4 @@
-package com.api.futebol.domain.enums;
+package com.api.futebol.domains.enums;
 
 public enum Estado {
     ACRE("Acre", "AC"),

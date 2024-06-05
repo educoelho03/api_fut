@@ -1,4 +1,4 @@
-package com.api.futebol.domain.entity;
+package com.api.futebol.domains.domain;
 
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
@@ -8,20 +8,20 @@ import java.util.List;
 @Entity
 @Table(name = "tabelas")
 @NoArgsConstructor
-public class TabelaEntity {
+public class Tabela {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToMany
-    private List<ClassificacaoEntity> classificacoes;
+    private List<Classificacao> classificacoes;
 
-    public List<ClassificacaoEntity> getClassificacao() {
+    public List<Classificacao> getClassificacao() {
         return classificacoes;
     }
 
-    public void setClassificacao(List<ClassificacaoEntity> classificacao) {
+    public void setClassificacao(List<Classificacao> classificacao) {
         this.classificacoes = classificacao;
     }
 }
