@@ -18,13 +18,12 @@ services:
     depends_on:
       - mysqldb
     build:
-      context: ./
-      # dockerfile: Dockerfile
+      dockerfile: Dockerfile
     working_dir: /usr/acc/api_futebol_app
     container_name: api_futebol_app
     restart: on-failure
     env_file:
-      - ./.env
+      - /.env
     ports:
       - "8080:8080"
     environment:
