@@ -1,7 +1,7 @@
 FROM maven:3.8.3-openjdk-17
 
 ENV PROJECT_HOME /usr/src/api_futebol_app
-ENV JAR_NAME api_futebol_app
+ENV JAR_NAME api_futebol_app.jar
 
 # Create destination directory
 RUN mkdir -p $PROJECT_HOME
