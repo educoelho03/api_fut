@@ -12,7 +12,7 @@ services:
       - POSTGRES_DB=$POSTGRES_DB
       - POSTGRES_USER=$POSTGRES_USER
     ports:
-      - "5432:5432"
+      - 5432:5432
     volumes:
       - api_futebol:/var/lib/postgresql
 
@@ -26,7 +26,7 @@ services:
     env_file:
       - ./.env  # Certifique-se de que o caminho do arquivo .env esteja correto
     ports:
-      - "8080:8080"
+      - 8080:8080
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/$POSTGRES_DB
       - SPRING_DATASOURCE_USERNAME=$POSTGRES_USER
