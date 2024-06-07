@@ -24,7 +24,7 @@ services:
     container_name: api_futebol_app
     restart: on-failure
     env_file:
-      - ./.env  # Certifique-se de que o caminho do arquivo .env esteja correto
+      - ./.env
     ports:
       - 8080:8080
     environment:
